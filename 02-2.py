@@ -44,13 +44,13 @@ def validate(sets_dict, bag):
                 return False
     return True
 
+
 def power(game_results):
     maxes = {"red": 0, "green": 0, "blue": 0}
     for set_ in game_results:
         for color, number in set_.items():
             maxes[color] = max(maxes[color], number)
-    return functools.reduce(lambda x, y: x * y,  maxes.values())
-    
+    return functools.reduce(lambda x, y: x * y, maxes.values())
 
 
 if __name__ == "__main__":

@@ -98,3 +98,6 @@ I was tempted to extract the minimum data needed, but I tought I'll need
 the full data in part 2. I was right! Now this should be easy.
 
 I was right. A little reduce and that's it.
+
+## day 3 - puzzle 1
+Well, that scalated quickly. From
