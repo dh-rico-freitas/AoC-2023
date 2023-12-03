@@ -87,3 +87,14 @@ difference. Also I changed the cli flag to call one or other version.
 The simple seems like a better baseline.
 
 That's all for this problem.
+
+## day 2 - puzzle 1
+
+Let's define a parse function with simple str.split methods and some
+comprehension magic.
+
+## day 2 - puzzle 2
+I was tempted to extract the minimum data needed, but I tought I'll need
+the full data in part 2. I was right! Now this should be easy.
+
+I was right. A little reduce and that's it.
