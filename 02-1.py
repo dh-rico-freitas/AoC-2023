@@ -11,8 +11,8 @@ INPUT_PATH = "inputs/02-1.txt"
 
 def main(games_file, bag):
     with open(games_file) as f:
-        data = [parse(game) for game in f if game.strip()]
-    print(sum(id for id, sets_dicts in data if validate(sets_dicts, bag)))
+        data = (parse(game) for game in f if game.strip())
+        print(sum(id for id, sets_dicts in data if validate(sets_dicts, bag)))
 
 
 def parse(game):
@@ -28,10 +28,10 @@ def parse(game):
         (ball_string.split() for ball_string in set_)
         for set_ in sets_lists_ball_strings
     )
-    sets_dicts = [
+    sets_dicts = (
         dict((color, int(number)) for number, color in set_)
         for set_ in sets_lists_ball_lists
-    ]
+    )
     return game_ID, sets_dicts
 
 
