@@ -78,12 +78,12 @@ Maybe I should try to fix that.
 I like the get_number_simple interface, but it's not trivial
 to recreate in get_number. At this point, OO seems razonable,
 two different implementations with different initialization,
-seems razonable to use composition and maybe an strategy patter.
 
 Let's see.
 
 The new implementation is OOP to reuse some code, same performance
-difference. Also I changed the cli flag to call one or other version.
+difference.
+Also I changed the cli flag to call one or other version.
 The simple seems like a better baseline.
 
 That's all for this problem.
@@ -100,4 +100,16 @@ the full data in part 2. I was right! Now this should be easy.
 I was right. A little reduce and that's it.
 
 ## day 3 - puzzle 1
-Well, that scalated quickly. From
+Well, that scalated quickly. 
+
+I need a function that find a number (a series of consecutives digits)
+and generate the index of the neighbours of it.
+
+### First attempt
+Full imperative approach with all the loops. 
+
+Some mangling with off by one errors, but a strightforward implementation.
+Loop line by line finding strikes of digits, sent the limits to an auxiliar
+function that generate the coordinates of a bounding box, filter out
+invalid coords and search for symbols in the board.
+
