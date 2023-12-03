@@ -69,9 +69,21 @@ Add some argparse boilerplate to choose what function use
 time the results. 
 
 Idea 3. is around 10x faster than 2., so it wasn't a bad idea to implement
-it in that way. But the second code is far cleaner. Maybe I should try
-to fix that.
+it in that way. But the second code is far cleaner
+(except for the serch function name).
+Maybe I should try to fix that.
 
+### Take 3. 
 
+I like the get_number_simple interface, but it's not trivial
+to recreate in get_number. At this point, OO seems razonable,
+two different implementations with different initialization,
+seems razonable to use composition and maybe an strategy patter.
 
+Let's see.
 
+The new implementation is OOP to reuse some code, same performance
+difference. Also I changed the cli flag to call one or other version.
+The simple seems like a better baseline.
+
+That's all for this problem.
