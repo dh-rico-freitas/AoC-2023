@@ -6,11 +6,11 @@ github: https://github.com/dh-rico-freitas
 """
 
 PUZZLE = "01-1"
-INPUTS_PATH = "inputs/"
+INPUT_PATH = "inputs/01-1.txt"
 
 
 def main():
-    with open(INPUTS_PATH + PUZZLE + ".txt") as f:
+    with open(INPUT_PATH) as f:
         numbers = (get_number(l) for l in f)
         print(sum(numbers))
 
