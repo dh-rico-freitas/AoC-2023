@@ -8,7 +8,7 @@ github: https://github.com/dh-rico-freitas
 from collections import defaultdict
 
 PUZZLE = "01-2"
-INPUTS_PATH = "inputs/01-1.txt"
+INPUTS_PATH = "inputs/01.txt"
 
 
 def main(processor):

@@ -7,7 +7,7 @@ github: https://github.com/dh-rico-freitas
 import functools
 
 PUZZLE = "02-2"
-INPUT_PATH = "inputs/02-1.txt"
+INPUT_PATH = "inputs/02.txt"
 
 
 def main(games_file):

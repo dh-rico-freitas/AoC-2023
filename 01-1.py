@@ -6,7 +6,7 @@ github: https://github.com/dh-rico-freitas
 """
 
 PUZZLE = "01-1"
-INPUT_PATH = "inputs/01-1.txt"
+INPUT_PATH = "inputs/01.txt"
 
 
 def main():
