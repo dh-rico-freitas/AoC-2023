@@ -131,3 +131,32 @@ for n> 0  p = 2^(n-1), for n = 0, p = 0, wherre p is points.
 List are small, sets seems like an overkill, but, _alas_, it's a nice
 overkill.
 
+## day 4 - puzzle 2
+
+I can keep all the parsing from part 1. 
+
+I have to keep a record of number of copies.
+I could try to make a nice algorithm, but let's start by brute
+forcing it.
+
+### first attempt
+
+pythonese pesudo code:
+
+Parse all data and calculate a list of number of matching numbers N.
+
+lenght = len(N)
+
+Create a list of the same lenght full of ones. C.
+
+for i, n in enumerate(N):
+   for j in range(i+1, min(length, N+i+1)):
+      C[j] += C[i]
+
+print(sum(C))
+
+And this run in 24 ms. That's enough speed for me.
+
+Let's keep going.
+
+
