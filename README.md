@@ -181,3 +181,13 @@ And I can use it like map(lambda x, apply_map(x, map_), seeds).
 
 Well. Just don't use generators in loops, it get weird.
 
+## day 5 - puzzle 1
+How bad can be to brute force this? Let's try.
+
+Well, that was too bad. 
+Back to the sketch pad.
+
+Idea, reverse the mapping and walk lands from 0 to inf searching if
+the seed used is one of the provided.
+
+8s. It ain't much but it's honest job.
