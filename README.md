@@ -113,3 +113,21 @@ Loop line by line finding strikes of digits, sent the limits to an auxiliar
 function that generate the coordinates of a bounding box, filter out
 invalid coords and search for symbols in the board.
 
+## day 3 - puzzle 2
+Let's see what can I save from part 1.
+
+Too sleepy to follow. 
+
+# 12-08
+Almost a week without time to this.
+
+I will skip that day 3 puzzle 2 for now. 
+
+## day 4 - puzzle 1
+
+Easy to parse data, if n is the number of correct numbers, then 
+for n> 0  p = 2^(n-1), for n = 0, p = 0, wherre p is points.
+
+List are small, sets seems like an overkill, but, _alas_, it's a nice
+overkill.
+
