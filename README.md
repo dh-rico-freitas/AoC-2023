@@ -160,3 +160,24 @@ And this run in 24 ms. That's enough speed for me.
 Let's keep going.
 
 
+## day 5 - puzzle 1
+
+OK. seems easy. Let's keep brute-forcing it. 
+
+For each seed I will check if it's in the map range and convert it acordlingly.
+If not, just pass it.
+
+A function apply_map like:
+
+def apply_map(s, map_):
+
+   for dest_start, source_start, length in map_:
+      if source_start <= s < source_start + length:
+         return dest_start - source_start + s 
+   return s
+
+
+And I can use it like map(lambda x, apply_map(x, map_), seeds).
+
+Well. Just don't use generators in loops, it get weird.
+
