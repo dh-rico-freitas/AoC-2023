@@ -198,3 +198,8 @@ Loop through all posible times( actually 1 to t-1, the zero and t don't move at 
 
 Works ok
 
+## day 6 - puzzle 2
+Minimal changes to puzzle 1. 
+
+Finish in less than 4s.
+
