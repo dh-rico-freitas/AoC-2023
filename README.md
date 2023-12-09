@@ -313,3 +313,39 @@ I used regex for parsing. Nice problem. Let me use some itertools magic.
 ## day 8 - puzzle 2
 
 Nice. Easy to modify part 1.
+
+Well. Not so nice, I went to lunch and it keep running.
+I need to think.
+
+I have a coupple of questions.
+
+Every path (maybe with the exception of the longest)
+has to had cycles.
+
+If every cycle have only one Z and one A, and the Z is in the last possition
+the total length will be the least common multiple of the cycles length.
+
+But a cycle could happen in any place.
+
+This sequence
+
+AAA -> BBB -> ZZZ -> BBB 
+
+Will have a valid stop at any odd number of steps.
+
+Ok. Let's take that. First, identify cycles.
+
+Let's make some data exploration.
+
+There is only one Z in each path and they are just before the A. 
+Bingo, easy solution (mostly wrong in the general case, but, who cares):
+
+Search length of all cycles.
+Just loop until get to the start. 
+Register those numbers.
+
+Then calculate the lcm and that's it.
+
+Worked. I'm not much happy with this.
+
+This could've be a very very difficult problem.
