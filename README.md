@@ -192,7 +192,6 @@ the seed used is one of the provided.
 
 8s. It ain't much but it's honest job.
 
-
 ## day 6 - puzzle 1
 Loop through all posible times( actually 1 to t-1, the zero and t don't move at all).
 
@@ -203,3 +202,76 @@ Minimal changes to puzzle 1.
 
 Finish in less than 4s.
 
+## day 7 - puzzle 1
+I need to keep the original hand to same-type order.
+
+The key function is a little hacky, but I thing python sorted cached the
+results (I have to check) but it's prety fast.
+
+## day 7 - puzzle 2
+I don't know if this is pretty easy or pretty difficult.
+
+Can I simply sum the number of J to the card with the highest number?
+
+2345J -> 2J 345  a pair
+234JJ -> 2JJ 34  three of a kind
+23JJJ -> 2JJJ 3  four of a kind
+2JJJJ -> 2JJJJ   five of a kind
+
+2234J -> 22J 34  three of a kind
+
+Yes, this is the simplest solution.
+
+# 12-09
+New day. I think it will be a short one. Let's see.
+
+I will retake puzzle 6.
+
+## day 6 - puzzle 2 - take 2
+
+I could spent some time going for the quadratic formula, but second
+part could be hard in fp precision.
+
+Anyway, knowing distance is a quadratic ecuation in press time, with
+zeros at 0 and T (the race time) I could just loop until a first winning
+time, and then substract 2 times that to the total Time.
+
+In the worst case it will halve the time, and if the prior is uniform,
+it should reduce time to 1/3.
+
+It actually works better than that. From 3.9s to 0.34s 
+
+## day 6 - puzzle 2 - take 3
+I have a nother idea!
+Instead of a sequential search use a nonlinear binary search.
+An standar binary search will overshoot many guesses.
+But in this case we known the exact equation, we can exploit that:
+
+Our next guess will be:
+
+x^(1/2) = (a^(1/2) + b^(1/2)) / 2 
+
+Sqaring both sides:
+
+x = (a + b + 2 (ab)**(1/2)) / 4 = ( (a+b)/2 + (ab)^(1/2) ) / 2
+
+Our new candidate is the average between the aritmetic mean and the
+geometric mean.
+Well, that's .
+I don't thin a couple less loops will offset the extra time of sqrt.
+
+Let's try both.
+
+Well. that's was better than expected.
+
+```
+Version 1 run in 3.85257869400084s: 49240091
+Version 2 run in 0.3386094570159912s: 49240091
+Version 3 run in 5.6405027862638235e-05s: 49240091
+Version 4 run in 3.2215029932558537e-05s: 49240091
+```
+
+4 orders of magnitude by simply making a linear search doesn't impress
+me too much. That the sqrt version is faster does.
+
+Let's see how many recursion steps it do.
