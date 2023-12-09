@@ -301,3 +301,15 @@ Just reorder CARDS values and add a little logic around J.
 
 The only mistake I made is handle the case where there are 5 J.
 
+I never upload 07-1.py.
+
+
+## day 8 - puzzle 1
+
+Just brute force it. 
+
+I used regex for parsing. Nice problem. Let me use some itertools magic.
+
+## day 8 - puzzle 2
+
+Nice. Easy to modify part 1.
