@@ -349,3 +349,10 @@ Then calculate the lcm and that's it.
 Worked. I'm not much happy with this.
 
 This could've be a very very difficult problem.
+
+
+## day 8 - puzzle 1
+I loved this problem. I got a very nice, compact and clear solution in
+nine logical line of code, two of them used to read the input.
+
+
