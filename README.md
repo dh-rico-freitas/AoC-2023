@@ -356,3 +356,8 @@ I loved this problem. I got a very nice, compact and clear solution in
 nine logical line of code, two of them used to read the input.
 
 
+## day 8 - puzzle 2
+Seems too easy... Let's see.
+
+I was right!
+Only a map more to reverse the list of numbers.
