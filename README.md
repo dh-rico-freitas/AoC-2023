@@ -295,3 +295,9 @@ The alternative would be to resolve the equation directly, but that will
 put me in the need to be careful with floating point precision.
 
 
+## day 7 - puzzle 2 - take 2
+I just hang this at mid work. My original Idea was pretty neat. 
+Just reorder CARDS values and add a little logic around J.
+
+The only mistake I made is handle the case where there are 5 J.
+
