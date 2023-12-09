@@ -287,3 +287,11 @@ the next candidate function.
 Unexpectdly that worked well enough. 
 Next step, lets drop all the old versions and try to make a full custom
 non reusable function with all possible inlined.
+
+That works in 10μs.
+
+That's the final attempt.
+The alternative would be to resolve the equation directly, but that will
+put me in the need to be careful with floating point precision.
+
+
