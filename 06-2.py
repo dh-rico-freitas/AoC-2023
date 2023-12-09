@@ -58,11 +58,41 @@ def version_4(times, distances):
     return reduce(lambda x, y: x * y, ways)
 
 
+def version_5(times, distances):
+    ways = []
+    for t, d in zip(times, distances):
+        min_x = round(
+            binary_search(
+                1,
+                t,
+                d,
+                lambda x: distance(x, t),
+            )
+        )
+        ways.append(t - min_x * 2 + 1)
+    return reduce(lambda x, y: x * y, ways)
+
+
 def general_binary_search(
     min_x, max_x, target, function, new_candidate=lambda x, y: (x + y) / 2, tol=0.2
 ):
     def f(min_x, max_x, i):
         candidate = new_candidate(min_x, max_x)
+        if (max_x - min_x) < tol:
+            print(i)
+            return candidate
+        result = function(candidate)
+        if result > target:
+            return f(min_x, candidate, i + 1)
+        else:
+            return f(candidate, max_x, i + 1)
+
+    return f(min_x, max_x, 1)
+
+
+def binary_search(min_x, max_x, target, function, tol=0.5):
+    def f(min_x, max_x, i):
+        candidate = (min_x + max_x) / 2
         if (max_x - min_x) < tol:
             print(i)
             return candidate
@@ -93,3 +123,8 @@ if __name__ == "__main__":
     rta_4 = version_4(times, distances)
     end_time = perf_counter()
     print(f"Version 4 run in {end_time - start_time}s: {rta_4}")
+
+    start_time = perf_counter()
+    rta_5 = version_5(times, distances)
+    end_time = perf_counter()
+    print(f"Version 5 run in {end_time - start_time}s: {rta_5}")

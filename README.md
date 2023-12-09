@@ -283,3 +283,7 @@ Also, there is only one step difference between linear and sqr candidates.
 
 Instead of using the generic function I will do a linear search inlining
 the next candidate function.
+
+Unexpectdly that worked well enough. 
+Next step, lets drop all the old versions and try to make a full custom
+non reusable function with all possible inlined.
