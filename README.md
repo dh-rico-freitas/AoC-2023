@@ -361,3 +361,9 @@ Seems too easy... Let's see.
 
 I was right!
 Only a map more to reverse the list of numbers.
+
+## day 8 - a little test replacing recursion
+
+Changed recursion with a while loop.
+
+There is no performance change. Both solutions are at 2ms. 
