@@ -275,3 +275,11 @@ Version 4 run in 3.2215029932558537e-05s: 49240091
 me too much. That the sqrt version is faster does.
 
 Let's see how many recursion steps it do.
+
+I was using the target value as stop criteria, but I need an int time,
+stopping difference between max and min time is better in this cas.
+
+Also, there is only one step difference between linear and sqr candidates. 
+
+Instead of using the generic function I will do a linear search inlining
+the next candidate function.

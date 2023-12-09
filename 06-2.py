@@ -59,22 +59,20 @@ def version_4(times, distances):
 
 
 def general_binary_search(
-    min_x, max_x, target, function, new_candidate=lambda x, y: (x + y) / 2, tol=0.25
+    min_x, max_x, target, function, new_candidate=lambda x, y: (x + y) / 2, tol=0.2
 ):
-    min_err = abs(function(min_x) - target)
-    max_err = abs(function(max_x) - target)
-
-    def f(min_x, min_err, max_x, max_err):
+    def f(min_x, max_x, i):
         candidate = new_candidate(min_x, max_x)
-        result = function(candidate)
-        if (candidate_error := abs(target - result)) < tol:
+        if (max_x - min_x) < tol:
+            print(i)
             return candidate
-        elif result > target:
-            return f(min_x, min_err, candidate, candidate_error)
+        result = function(candidate)
+        if result > target:
+            return f(min_x, candidate, i + 1)
         else:
-            return f(candidate, candidate_error, max_x, max_err)
+            return f(candidate, max_x, i + 1)
 
-    return f(min_x, min_err, max_x, max_err)
+    return f(min_x, max_x, 1)
 
 
 def distance(time, total_time):
@@ -85,16 +83,6 @@ if __name__ == "__main__":
     with open(INPUT_PATH) as f:
         times = [int("".join(f.readline().split(":")[1].split()))]
         distances = [int("".join(f.readline().split(":")[1].split()))]
-
-    start_time = perf_counter()
-    rta_1 = version_1(times, distances)
-    end_time = perf_counter()
-    print(f"Version 1 run in {end_time - start_time}s: {rta_1}")
-
-    start_time = perf_counter()
-    rta_2 = version_2(times, distances)
-    end_time = perf_counter()
-    print(f"Version 2 run in {end_time - start_time}s: {rta_2}")
 
     start_time = perf_counter()
     rta_3 = version_3(times, distances)
