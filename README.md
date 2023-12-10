@@ -367,3 +367,26 @@ Only a map more to reverse the list of numbers.
 Changed recursion with a while loop.
 
 There is no performance change. Both solutions are at 2ms. 
+
+# 12-10
+I didn't write anything about day 9 puzzles.
+
+Failed my first attempt. Succeded the second, but the
+code was uggly. 
+With a little thinking I got a nice recursive solution.
+
+I tried also to replace the recursion with a loop, but
+didn't found an appreciable difference in performmance
+while the recursive function is a little clearer.
+
+## day 9 - puzzle 1
+I spent too much time making an OO solution.
+
+I can reuse my walkers to create the coords of the path.
+I have to think how to know if I'm in the inside or the outside.
+
+I think I will create a "solved maze" class where I will store
+only the path, and then take points from there, using a greedy
+aproach to fill all the space. 
+
+That will be work for tomorrow. I'm too sleepy now.
